@@ -1,4 +1,4 @@
-# ChatGPT AI Chatbot App
+# ChatGPT AI bot App
 
 <img src = "chat_gpt_1.png">
 <p>
