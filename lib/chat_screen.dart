@@ -118,7 +118,7 @@ class _ChatScreenState extends State<ChatScreen> {
             controller: _controller,
             onSubmitted: (value) => _sendMessage(),
             decoration: const InputDecoration.collapsed(
-                hintText: "Question/description"),
+                hintText: "问题或闲谈"),
           ),
         ),
         ButtonBar(
@@ -130,12 +130,12 @@ class _ChatScreenState extends State<ChatScreen> {
                 _sendMessage();
               },
             ),
-            TextButton(
+            ElevatedButton(
                 onPressed: () {
                   _isImageSearch = true;
                   _sendMessage();
                 },
-                child: const Text("Generate Image"))
+                child: const Text("生成图片"),)
           ],
         ),
       ],
@@ -145,7 +145,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("ChatGPT & Dall-E2")),
+        appBar: AppBar(title: const Text("ChatGPT与Dall-E2",style: TextStyle(color: Colors.deepPurpleAccent))),
         body: SafeArea(
           child: Column(
             children: [
