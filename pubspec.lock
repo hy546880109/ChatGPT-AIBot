@@ -346,7 +346,7 @@ packages:
     source: hosted
     version: "2.0.17"
   shared_preferences_foundation:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: shared_preferences_foundation
       sha256: "1e755f8583229f185cfca61b1d80fb2344c9d660e1c69ede5450d8f478fa5310"

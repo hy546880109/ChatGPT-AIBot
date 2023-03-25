@@ -25,7 +25,8 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     chatGPT = OpenAI.instance.build(
         token: dotenv.env["openai_key"],
-        baseOption: HttpSetup(receiveTimeout: 60000));
+        baseOption: HttpSetup(receiveTimeout: 60000),
+        isLogger: true);
     super.initState();
   }
 
@@ -117,8 +118,7 @@ class _ChatScreenState extends State<ChatScreen> {
           child: TextField(
             controller: _controller,
             onSubmitted: (value) => _sendMessage(),
-            decoration: const InputDecoration.collapsed(
-                hintText: "问题或闲谈"),
+            decoration: const InputDecoration.collapsed(hintText: "问题或闲谈"),
           ),
         ),
         ButtonBar(
@@ -131,11 +131,12 @@ class _ChatScreenState extends State<ChatScreen> {
               },
             ),
             ElevatedButton(
-                onPressed: () {
-                  _isImageSearch = true;
-                  _sendMessage();
-                },
-                child: const Text("生成图片"),)
+              onPressed: () {
+                _isImageSearch = true;
+                _sendMessage();
+              },
+              child: const Text("生成图片"),
+            )
           ],
         ),
       ],
@@ -145,7 +146,9 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("ChatGPT与Dall-E2",style: TextStyle(color: Colors.deepPurpleAccent))),
+        appBar: AppBar(
+            title: const Text("ChatGPT与Dall-E2",
+                style: TextStyle(color: Colors.deepPurpleAccent))),
         body: SafeArea(
           child: Column(
             children: [
